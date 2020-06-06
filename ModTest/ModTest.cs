@@ -30,9 +30,9 @@ namespace ModTest
 
         protected override void OnSubModuleLoad(){
             base.OnSubModuleLoad();
-            /*在主菜单中添加一个选项，命名为Message，点击后在左下角显示信息“Hello World!”*/
-            TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Message",
-                new TextObject("Message", null),
+			/*在主菜单中添加一个选项，命名为Click Me，点击后在左下角显示信息“Hello World!”*/
+			TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Message",
+                new TextObject("Click Me", null),
                 9990,
                 () => { InformationManager.DisplayMessage(new InformationMessage("Hello World!")); },
                 false));
@@ -44,17 +44,18 @@ namespace ModTest
             /*在主菜单加载前，有入场动画，在动画的左下角，显示自定义信息“Loaded DeveloperConsole. Press CTRL and ~ to enable it.”*/
             if (!this._isLoaded)
             {
-                InformationManager.DisplayMessage(new InformationMessage("Loaded DeveloperConsole. Press CTRL and ~ to enable it.", Color.FromUint(4282569842U)));
+                InformationManager.DisplayMessage(new InformationMessage("Test for OnBeforeInitialModuleScreenSetAsRoot", Color.FromUint(4282569842U)));
                 this._isLoaded = true;
             }
         }
 
+		/*主进程会一直去循环调用这个函数*/
         protected override void OnApplicationTick(float dt)
         {
             base.OnApplicationTick(dt);
             if (!this._keyPressed && Input.DebugInput.IsControlDown() && Input.DebugInput.IsKeyDown(InputKey.Tilde))
             {
-                SubModule.toggle_imgui_console_visibility(new UIntPtr(1U));
+				SubModule.toggle_imgui_console_visibility(new UIntPtr(1U));
                 this._keyPressed = true;
             }
             else if (Input.DebugInput.IsKeyReleased(InputKey.Tilde))
@@ -257,14 +258,15 @@ namespace ModTest
 				return "Format is \"ui.open_screen [TypeName]\".";
 			}
 			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-			Func<Type, bool> <> 9__0;
+			Func<Type, bool> modify_by_why;
+			modify_by_why = null;
 			for (int i = 0; i < assemblies.Length; i++)
 			{
 				IEnumerable<Type> types = assemblies[i].GetTypes();
 				Func<Type, bool> predicate;
-				if ((predicate = <> 9__0) == null)
+				if ((predicate = modify_by_why) == null)
 				{
-					predicate = (<> 9__0 = ((Type t) => t.Name == strings[0]));
+					predicate = (modify_by_why = ((Type t) => t.Name == strings[0]));
 				}
 				Type type = types.FirstOrDefault(predicate);
 				if (type != null && type.BaseType == typeof(ScreenBase))

@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>F:\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\ModTest\bin\Win64_Shipping_Client\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -118,7 +118,7 @@
       <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.Diamond.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade.GauntletUI">
-      <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath>
+      <HintPath>F:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade.GauntletUI.Widgets">
       <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.GauntletUI.Widgets.dll</HintPath>
@@ -127,7 +127,7 @@
       <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade.View">
-      <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.View.dll</HintPath>
+      <HintPath>F:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection">
       <HintPath>..\..\..\..\Pictures\Mount2\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath>
@@ -175,6 +175,11 @@
   <ItemGroup>
     <Compile Include="ModTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
